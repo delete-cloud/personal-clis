@@ -1,0 +1,112 @@
+{
+  "schema_version": 3,
+  "tool_version": "0.1.0",
+  "summary": {
+    "inputs": 1,
+    "sources": 1,
+    "usable": 1,
+    "postman_candidates": 0,
+    "exit_code": 0
+  },
+  "inputs": [
+    {
+      "input": "upstream/frp-panel",
+      "kind": "git",
+      "origin": {
+        "type": "repo_url",
+        "repo_url": "https://github.com/VaalaCat/frp-panel.git",
+        "pinned_tag": "alpha",
+        "ref_kind": "tag"
+      },
+      "candidates": [
+        {
+          "path": "idl",
+          "format": "proto",
+          "parsed": true,
+          "score": 0,
+          "metrics": {
+            "operations": 11
+          },
+          "reason": "proto, 1 services, 11 rpc, 0 google.api.http; not emitted (no google.api.http)"
+        },
+        {
+          "path": "upstream/frp-panel",
+          "format": "openapi3",
+          "parsed": true,
+          "score": 0,
+          "metrics": {
+            "paths": 54,
+            "operations": 54
+          },
+          "reason": "L2 gin extractor, 54 routes"
+        }
+      ],
+      "selected": [
+        "frp_panel"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "frp_panel",
+      "recommended": true,
+      "level": "L2",
+      "extractor": "gin",
+      "backend": "openapi3",
+      "confidence": "medium",
+      "would_emit_commands": 54,
+      "origin": {
+        "type": "local_path",
+        "local_path": "frp_panel"
+      },
+      "input": "upstream/frp-panel",
+      "provenance": {
+        "input": "upstream/frp-panel",
+        "backend": "openapi3",
+        "key": "l2"
+      },
+      "files": [
+        "openapi.yaml"
+      ],
+      "metrics": {
+        "paths": 54,
+        "operations": 54
+      },
+      "gaps": [
+        {
+          "kind": "body",
+          "scope": "source",
+          "message": "request bodies were not recovered from source",
+          "blocking": false
+        },
+        {
+          "kind": "response",
+          "scope": "source",
+          "message": "response shapes were not recovered from source",
+          "blocking": false
+        },
+        {
+          "kind": "auth",
+          "scope": "source",
+          "message": "auth requirements were not recovered from source",
+          "blocking": false
+        },
+        {
+          "kind": "dynamic-route",
+          "scope": "source",
+          "message": "prefixes from route groups or class-level mappings may not be applied; verify full paths",
+          "blocking": false
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "proto-no-http-annotation",
+      "scope": "input",
+      "ref": "idl",
+      "message": "11 rpc across 1 service(s) but no google.api.http annotation; Lathe would emit no commands, so no proto source was written",
+      "blocking": true
+    }
+  ]
+}

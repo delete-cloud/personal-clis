@@ -1,0 +1,7 @@
+sources:
+    frp_panel:
+        local_path: frp_panel
+        backend: openapi3
+        openapi3:
+            files:
+                - openapi.yaml

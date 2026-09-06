@@ -1,0 +1,478 @@
+{
+  "commit": "1a58b856d7de19de8669b7072872986d2fa1604a",
+  "operations": [
+    {
+      "method": "post",
+      "path": "/api/v1/auth/cert",
+      "request": "GetClientCertRequest",
+      "response": "GetClientCertResponse",
+      "source": "biz/master/handler.go:33"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/auth/login",
+      "request": "LoginRequest",
+      "response": "LoginResponse",
+      "source": "biz/master/handler.go:34"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/auth/register",
+      "request": "RegisterRequest",
+      "response": "RegisterResponse",
+      "source": "biz/master/handler.go:35"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/user/get",
+      "request": "GetUserInfoRequest",
+      "response": "GetUserInfoResponse",
+      "source": "biz/master/handler.go:42"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/user/update",
+      "request": "UpdateUserInfoRequest",
+      "response": "UpdateUserInfoResponse",
+      "source": "biz/master/handler.go:43"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/user/sign-token",
+      "request": "SignTokenRequest",
+      "response": "SignTokenResponse",
+      "source": "biz/master/handler.go:44"
+    },
+    {
+      "method": "get",
+      "path": "/api/v1/platform/baseinfo",
+      "request": null,
+      "response": "GetPlatformInfoResponse",
+      "source": "biz/master/handler.go:48"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/platform/clientsstatus",
+      "request": "GetClientsStatusRequest",
+      "response": "GetClientsStatusResponse",
+      "source": "biz/master/handler.go:49"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/client/get",
+      "request": "GetClientRequest",
+      "response": "GetClientResponse",
+      "source": "biz/master/handler.go:53"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/client/init",
+      "request": "InitClientRequest",
+      "response": "InitClientResponse",
+      "source": "biz/master/handler.go:54"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/client/delete",
+      "request": "DeleteClientRequest",
+      "response": "DeleteClientResponse",
+      "source": "biz/master/handler.go:55"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/client/list",
+      "request": "ListClientsRequest",
+      "response": "ListClientsResponse",
+      "source": "biz/master/handler.go:56"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/client/install_workerd",
+      "request": "InstallWorkerdRequest",
+      "response": "InstallWorkerdResponse",
+      "source": "biz/master/handler.go:57"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/client/upgrade",
+      "request": "UpgradeFrppRequest",
+      "response": "UpgradeFrppResponse",
+      "source": "biz/master/handler.go:58"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/server/get",
+      "request": "GetServerRequest",
+      "response": "GetServerResponse",
+      "source": "biz/master/handler.go:62"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/server/init",
+      "request": "InitServerRequest",
+      "response": "InitServerResponse",
+      "source": "biz/master/handler.go:63"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/server/delete",
+      "request": "DeleteServerRequest",
+      "response": "DeleteServerResponse",
+      "source": "biz/master/handler.go:64"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/server/list",
+      "request": "ListServersRequest",
+      "response": "ListServersResponse",
+      "source": "biz/master/handler.go:65"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/frpc/update",
+      "request": "UpdateFRPCRequest",
+      "response": "UpdateFRPCResponse",
+      "source": "biz/master/handler.go:69"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/frpc/delete",
+      "request": "RemoveFRPCRequest",
+      "response": "RemoveFRPCResponse",
+      "source": "biz/master/handler.go:70"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/frpc/stop",
+      "request": "StopFRPCRequest",
+      "response": "StopFRPCResponse",
+      "source": "biz/master/handler.go:71"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/frpc/start",
+      "request": "StartFRPCRequest",
+      "response": "StartFRPCResponse",
+      "source": "biz/master/handler.go:72"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/frps/update",
+      "request": "UpdateFRPSRequest",
+      "response": "UpdateFRPSResponse",
+      "source": "biz/master/handler.go:76"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/frps/delete",
+      "request": "RemoveFRPSRequest",
+      "response": "RemoveFRPSResponse",
+      "source": "biz/master/handler.go:77"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/get_by_cid",
+      "request": "GetProxyStatsByClientIDRequest",
+      "response": "GetProxyStatsByClientIDResponse",
+      "source": "biz/master/handler.go:81"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/get_by_sid",
+      "request": "GetProxyStatsByServerIDRequest",
+      "response": "GetProxyStatsByServerIDResponse",
+      "source": "biz/master/handler.go:82"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/list_configs",
+      "request": "ListProxyConfigsRequest",
+      "response": "ListProxyConfigsResponse",
+      "source": "biz/master/handler.go:83"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/create_config",
+      "request": "CreateProxyConfigRequest",
+      "response": "CreateProxyConfigResponse",
+      "source": "biz/master/handler.go:84"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/update_config",
+      "request": "UpdateProxyConfigRequest",
+      "response": "UpdateProxyConfigResponse",
+      "source": "biz/master/handler.go:85"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/delete_config",
+      "request": "DeleteProxyConfigRequest",
+      "response": "DeleteProxyConfigResponse",
+      "source": "biz/master/handler.go:86"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/get_config",
+      "request": "GetProxyConfigRequest",
+      "response": "GetProxyConfigResponse",
+      "source": "biz/master/handler.go:87"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/start_proxy",
+      "request": "StartProxyRequest",
+      "response": "StartProxyResponse",
+      "source": "biz/master/handler.go:88"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/proxy/stop_proxy",
+      "request": "StopProxyRequest",
+      "response": "StopProxyResponse",
+      "source": "biz/master/handler.go:89"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/get",
+      "request": "GetWorkerRequest",
+      "response": "GetWorkerResponse",
+      "source": "biz/master/handler.go:93"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/status",
+      "request": "GetWorkerStatusRequest",
+      "response": "GetWorkerStatusResponse",
+      "source": "biz/master/handler.go:94"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/create",
+      "request": "CreateWorkerRequest",
+      "response": "CreateWorkerResponse",
+      "source": "biz/master/handler.go:95"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/list",
+      "request": "ListWorkersRequest",
+      "response": "ListWorkersResponse",
+      "source": "biz/master/handler.go:96"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/remove",
+      "request": "RemoveWorkerRequest",
+      "response": "RemoveWorkerResponse",
+      "source": "biz/master/handler.go:97"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/update",
+      "request": "UpdateWorkerRequest",
+      "response": "UpdateWorkerResponse",
+      "source": "biz/master/handler.go:98"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/redeploy",
+      "request": "RedeployWorkerRequest",
+      "response": "RedeployWorkerResponse",
+      "source": "biz/master/handler.go:99"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/create_ingress",
+      "request": "CreateWorkerIngressRequest",
+      "response": "CreateWorkerIngressResponse",
+      "source": "biz/master/handler.go:100"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/worker/get_ingress",
+      "request": "GetWorkerIngressRequest",
+      "response": "GetWorkerIngressResponse",
+      "source": "biz/master/handler.go:101"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/network/create",
+      "request": "CreateNetworkRequest",
+      "response": "CreateNetworkResponse",
+      "source": "biz/master/handler.go:107"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/network/delete",
+      "request": "DeleteNetworkRequest",
+      "response": "DeleteNetworkResponse",
+      "source": "biz/master/handler.go:108"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/network/update",
+      "request": "UpdateNetworkRequest",
+      "response": "UpdateNetworkResponse",
+      "source": "biz/master/handler.go:109"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/network/get",
+      "request": "GetNetworkRequest",
+      "response": "GetNetworkResponse",
+      "source": "biz/master/handler.go:110"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/network/list",
+      "request": "ListNetworksRequest",
+      "response": "ListNetworksResponse",
+      "source": "biz/master/handler.go:111"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/network/topology",
+      "request": "GetNetworkTopologyRequest",
+      "response": "GetNetworkTopologyResponse",
+      "source": "biz/master/handler.go:112"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/endpoint/create",
+      "request": "CreateEndpointRequest",
+      "response": "CreateEndpointResponse",
+      "source": "biz/master/handler.go:115"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/endpoint/delete",
+      "request": "DeleteEndpointRequest",
+      "response": "DeleteEndpointResponse",
+      "source": "biz/master/handler.go:116"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/endpoint/update",
+      "request": "UpdateEndpointRequest",
+      "response": "UpdateEndpointResponse",
+      "source": "biz/master/handler.go:117"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/endpoint/get",
+      "request": "GetEndpointRequest",
+      "response": "GetEndpointResponse",
+      "source": "biz/master/handler.go:118"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/endpoint/list",
+      "request": "ListEndpointsRequest",
+      "response": "ListEndpointsResponse",
+      "source": "biz/master/handler.go:119"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/link/create",
+      "request": "CreateWireGuardLinkRequest",
+      "response": "CreateWireGuardLinkResponse",
+      "source": "biz/master/handler.go:122"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/link/delete",
+      "request": "DeleteWireGuardLinkRequest",
+      "response": "DeleteWireGuardLinkResponse",
+      "source": "biz/master/handler.go:123"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/link/update",
+      "request": "UpdateWireGuardLinkRequest",
+      "response": "UpdateWireGuardLinkResponse",
+      "source": "biz/master/handler.go:124"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/link/get",
+      "request": "GetWireGuardLinkRequest",
+      "response": "GetWireGuardLinkResponse",
+      "source": "biz/master/handler.go:125"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/link/list",
+      "request": "ListWireGuardLinksRequest",
+      "response": "ListWireGuardLinksResponse",
+      "source": "biz/master/handler.go:126"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/create",
+      "request": "CreateWireGuardRequest",
+      "response": "CreateWireGuardResponse",
+      "source": "biz/master/handler.go:129"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/delete",
+      "request": "DeleteWireGuardRequest",
+      "response": "DeleteWireGuardResponse",
+      "source": "biz/master/handler.go:130"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/update",
+      "request": "UpdateWireGuardRequest",
+      "response": "UpdateWireGuardResponse",
+      "source": "biz/master/handler.go:131"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/restart",
+      "request": "RestartWireGuardRequest",
+      "response": "RestartWireGuardResponse",
+      "source": "biz/master/handler.go:132"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/get",
+      "request": "GetWireGuardRequest",
+      "response": "GetWireGuardResponse",
+      "source": "biz/master/handler.go:133"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/list",
+      "request": "ListWireGuardsRequest",
+      "response": "ListWireGuardsResponse",
+      "source": "biz/master/handler.go:134"
+    },
+    {
+      "method": "post",
+      "path": "/api/v1/wg/runtime/get",
+      "request": "GetWireGuardRuntimeInfoRequest",
+      "response": "GetWireGuardRuntimeInfoResponse",
+      "source": "biz/master/handler.go:135"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "/auth",
+      "reason": "plugin callback, cookie logout, or WebSocket protocol"
+    },
+    {
+      "path": "/api/v1/auth/logout",
+      "reason": "plugin callback, cookie logout, or WebSocket protocol"
+    },
+    {
+      "path": "/api/v1/pty/:clientID",
+      "reason": "plugin callback, cookie logout, or WebSocket protocol"
+    },
+    {
+      "path": "/api/v1/log",
+      "reason": "plugin callback, cookie logout, or WebSocket protocol"
+    }
+  ]
+}

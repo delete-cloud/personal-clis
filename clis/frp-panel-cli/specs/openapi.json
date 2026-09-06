@@ -1,0 +1,5240 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "frp-panel HTTP API",
+    "version": "1a58b856d7de19de8669b7072872986d2fa1604a"
+  },
+  "paths": {
+    "/api/v1/auth/cert": {
+      "post": {
+        "operationId": "auth_cert",
+        "tags": [
+          "auth"
+        ],
+        "summary": "auth cert",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetClientCertResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetClientCertRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "operationId": "auth_login",
+        "tags": [
+          "auth"
+        ],
+        "summary": "auth login",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/LoginResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/register": {
+      "post": {
+        "operationId": "auth_register",
+        "tags": [
+          "auth"
+        ],
+        "summary": "auth register",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/RegisterResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/get": {
+      "post": {
+        "operationId": "user_get",
+        "tags": [
+          "user"
+        ],
+        "summary": "user get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetUserInfoResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUserInfoRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/update": {
+      "post": {
+        "operationId": "user_update",
+        "tags": [
+          "user"
+        ],
+        "summary": "user update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateUserInfoResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserInfoRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/sign-token": {
+      "post": {
+        "operationId": "user_sign_token",
+        "tags": [
+          "user"
+        ],
+        "summary": "user sign-token",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/SignTokenResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignTokenRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/platform/baseinfo": {
+      "get": {
+        "operationId": "platform_baseinfo",
+        "tags": [
+          "platform"
+        ],
+        "summary": "platform baseinfo",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetPlatformInfoResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/platform/clientsstatus": {
+      "post": {
+        "operationId": "platform_clientsstatus",
+        "tags": [
+          "platform"
+        ],
+        "summary": "platform clientsstatus",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetClientsStatusResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetClientsStatusRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/get": {
+      "post": {
+        "operationId": "client_get",
+        "tags": [
+          "client"
+        ],
+        "summary": "client get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetClientResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetClientRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/init": {
+      "post": {
+        "operationId": "client_init",
+        "tags": [
+          "client"
+        ],
+        "summary": "client init",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/InitClientResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InitClientRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/delete": {
+      "post": {
+        "operationId": "client_delete",
+        "tags": [
+          "client"
+        ],
+        "summary": "client delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteClientResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteClientRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/list": {
+      "post": {
+        "operationId": "client_list",
+        "tags": [
+          "client"
+        ],
+        "summary": "client list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListClientsResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListClientsRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/install_workerd": {
+      "post": {
+        "operationId": "client_install_workerd",
+        "tags": [
+          "client"
+        ],
+        "summary": "client install_workerd",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/InstallWorkerdResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstallWorkerdRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/upgrade": {
+      "post": {
+        "operationId": "client_upgrade",
+        "tags": [
+          "client"
+        ],
+        "summary": "client upgrade",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpgradeFrppResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpgradeFrppRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/server/get": {
+      "post": {
+        "operationId": "server_get",
+        "tags": [
+          "server"
+        ],
+        "summary": "server get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetServerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetServerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/server/init": {
+      "post": {
+        "operationId": "server_init",
+        "tags": [
+          "server"
+        ],
+        "summary": "server init",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/InitServerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InitServerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/server/delete": {
+      "post": {
+        "operationId": "server_delete",
+        "tags": [
+          "server"
+        ],
+        "summary": "server delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteServerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteServerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/server/list": {
+      "post": {
+        "operationId": "server_list",
+        "tags": [
+          "server"
+        ],
+        "summary": "server list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListServersResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListServersRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/frpc/update": {
+      "post": {
+        "operationId": "frpc_update",
+        "tags": [
+          "frpc"
+        ],
+        "summary": "frpc update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateFRPCResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFRPCRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/frpc/delete": {
+      "post": {
+        "operationId": "frpc_delete",
+        "tags": [
+          "frpc"
+        ],
+        "summary": "frpc delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/RemoveFRPCResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFRPCRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/frpc/stop": {
+      "post": {
+        "operationId": "frpc_stop",
+        "tags": [
+          "frpc"
+        ],
+        "summary": "frpc stop",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/StopFRPCResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopFRPCRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/frpc/start": {
+      "post": {
+        "operationId": "frpc_start",
+        "tags": [
+          "frpc"
+        ],
+        "summary": "frpc start",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/StartFRPCResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartFRPCRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/frps/update": {
+      "post": {
+        "operationId": "frps_update",
+        "tags": [
+          "frps"
+        ],
+        "summary": "frps update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateFRPSResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFRPSRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/frps/delete": {
+      "post": {
+        "operationId": "frps_delete",
+        "tags": [
+          "frps"
+        ],
+        "summary": "frps delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/RemoveFRPSResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFRPSRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/get_by_cid": {
+      "post": {
+        "operationId": "proxy_get_by_cid",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy get_by_cid",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetProxyStatsByClientIDResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetProxyStatsByClientIDRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/get_by_sid": {
+      "post": {
+        "operationId": "proxy_get_by_sid",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy get_by_sid",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetProxyStatsByServerIDResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetProxyStatsByServerIDRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/list_configs": {
+      "post": {
+        "operationId": "proxy_list_configs",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy list_configs",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListProxyConfigsResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListProxyConfigsRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/create_config": {
+      "post": {
+        "operationId": "proxy_create_config",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy create_config",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateProxyConfigResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProxyConfigRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/update_config": {
+      "post": {
+        "operationId": "proxy_update_config",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy update_config",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateProxyConfigResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProxyConfigRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/delete_config": {
+      "post": {
+        "operationId": "proxy_delete_config",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy delete_config",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteProxyConfigResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteProxyConfigRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/get_config": {
+      "post": {
+        "operationId": "proxy_get_config",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy get_config",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetProxyConfigResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetProxyConfigRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/start_proxy": {
+      "post": {
+        "operationId": "proxy_start_proxy",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy start_proxy",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/StartProxyResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartProxyRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/proxy/stop_proxy": {
+      "post": {
+        "operationId": "proxy_stop_proxy",
+        "tags": [
+          "proxy"
+        ],
+        "summary": "proxy stop_proxy",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/StopProxyResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopProxyRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/get": {
+      "post": {
+        "operationId": "worker_get",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetWorkerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWorkerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/status": {
+      "post": {
+        "operationId": "worker_status",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker status",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetWorkerStatusResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWorkerStatusRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/create": {
+      "post": {
+        "operationId": "worker_create",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker create",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateWorkerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWorkerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/list": {
+      "post": {
+        "operationId": "worker_list",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListWorkersResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListWorkersRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/remove": {
+      "post": {
+        "operationId": "worker_remove",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker remove",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/RemoveWorkerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveWorkerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/update": {
+      "post": {
+        "operationId": "worker_update",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateWorkerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWorkerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/redeploy": {
+      "post": {
+        "operationId": "worker_redeploy",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker redeploy",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/RedeployWorkerResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RedeployWorkerRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/create_ingress": {
+      "post": {
+        "operationId": "worker_create_ingress",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker create_ingress",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateWorkerIngressResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWorkerIngressRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/worker/get_ingress": {
+      "post": {
+        "operationId": "worker_get_ingress",
+        "tags": [
+          "worker"
+        ],
+        "summary": "worker get_ingress",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetWorkerIngressResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWorkerIngressRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/network/create": {
+      "post": {
+        "operationId": "wg_network_create",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg network create",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateNetworkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateNetworkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/network/delete": {
+      "post": {
+        "operationId": "wg_network_delete",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg network delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteNetworkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteNetworkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/network/update": {
+      "post": {
+        "operationId": "wg_network_update",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg network update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateNetworkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateNetworkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/network/get": {
+      "post": {
+        "operationId": "wg_network_get",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg network get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetNetworkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetNetworkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/network/list": {
+      "post": {
+        "operationId": "wg_network_list",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg network list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListNetworksResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListNetworksRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/network/topology": {
+      "post": {
+        "operationId": "wg_network_topology",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg network topology",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetNetworkTopologyResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetNetworkTopologyRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/endpoint/create": {
+      "post": {
+        "operationId": "wg_endpoint_create",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg endpoint create",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateEndpointResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEndpointRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/endpoint/delete": {
+      "post": {
+        "operationId": "wg_endpoint_delete",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg endpoint delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteEndpointResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteEndpointRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/endpoint/update": {
+      "post": {
+        "operationId": "wg_endpoint_update",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg endpoint update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateEndpointResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEndpointRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/endpoint/get": {
+      "post": {
+        "operationId": "wg_endpoint_get",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg endpoint get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetEndpointResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetEndpointRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/endpoint/list": {
+      "post": {
+        "operationId": "wg_endpoint_list",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg endpoint list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListEndpointsResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListEndpointsRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/link/create": {
+      "post": {
+        "operationId": "wg_link_create",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg link create",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateWireGuardLinkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWireGuardLinkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/link/delete": {
+      "post": {
+        "operationId": "wg_link_delete",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg link delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteWireGuardLinkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteWireGuardLinkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/link/update": {
+      "post": {
+        "operationId": "wg_link_update",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg link update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateWireGuardLinkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWireGuardLinkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/link/get": {
+      "post": {
+        "operationId": "wg_link_get",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg link get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetWireGuardLinkResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWireGuardLinkRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/link/list": {
+      "post": {
+        "operationId": "wg_link_list",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg link list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListWireGuardLinksResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListWireGuardLinksRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/create": {
+      "post": {
+        "operationId": "wg_create",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg create",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/CreateWireGuardResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWireGuardRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/delete": {
+      "post": {
+        "operationId": "wg_delete",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg delete",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/DeleteWireGuardResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteWireGuardRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/update": {
+      "post": {
+        "operationId": "wg_update",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg update",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/UpdateWireGuardResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWireGuardRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/restart": {
+      "post": {
+        "operationId": "wg_restart",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg restart",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/RestartWireGuardResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RestartWireGuardRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/get": {
+      "post": {
+        "operationId": "wg_get",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetWireGuardResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWireGuardRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/list": {
+      "post": {
+        "operationId": "wg_list",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/ListWireGuardsResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListWireGuardsRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/wg/runtime/get": {
+      "post": {
+        "operationId": "wg_runtime_get",
+        "tags": [
+          "wg"
+        ],
+        "summary": "wg runtime get",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "frp-panel envelope; code 200 means success, even though errors also use HTTP 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "$ref": "#/components/schemas/GetWireGuardRuntimeInfoResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWireGuardRuntimeInfoRequest"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "GetClientCertResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "cert": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "GetClientCertRequest": {
+        "type": "object",
+        "properties": {
+          "client_type": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "RegisterResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "GetUserInfoResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "user_info": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "UserID": {
+            "type": "integer"
+          },
+          "TenantID": {
+            "type": "integer"
+          },
+          "UserName": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "Role": {
+            "type": "string"
+          },
+          "Token": {
+            "type": "string"
+          },
+          "RawPassword": {
+            "type": "string"
+          }
+        }
+      },
+      "GetUserInfoRequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdateUserInfoResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "UpdateUserInfoRequest": {
+        "type": "object",
+        "properties": {
+          "user_info": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "SignTokenResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "SignTokenRequest": {
+        "type": "object",
+        "properties": {
+          "expires_in": {
+            "type": "integer"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/APIPermission"
+            }
+          }
+        }
+      },
+      "APIPermission": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "GetPlatformInfoResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total_client_count": {
+            "type": "integer"
+          },
+          "total_server_count": {
+            "type": "integer"
+          },
+          "unconfigured_client_count": {
+            "type": "integer"
+          },
+          "unconfigured_server_count": {
+            "type": "integer"
+          },
+          "configured_client_count": {
+            "type": "integer"
+          },
+          "configured_server_count": {
+            "type": "integer"
+          },
+          "master_rpc_host": {
+            "type": "string"
+          },
+          "master_rpc_port": {
+            "type": "integer"
+          },
+          "master_api_port": {
+            "type": "integer"
+          },
+          "master_api_scheme": {
+            "type": "string"
+          },
+          "client_rpc_url": {
+            "type": "string"
+          },
+          "client_api_url": {
+            "type": "string"
+          },
+          "github_proxy_url": {
+            "type": "string"
+          }
+        }
+      },
+      "GetClientsStatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "clients": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ClientStatus"
+            }
+          }
+        }
+      },
+      "ClientStatus": {
+        "type": "object",
+        "properties": {
+          "client_type": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "ping": {
+            "type": "integer"
+          },
+          "version": {
+            "$ref": "#/components/schemas/ClientVersion"
+          },
+          "addr": {
+            "type": "string"
+          },
+          "connect_time": {
+            "type": "integer"
+          }
+        }
+      },
+      "ClientVersion": {
+        "type": "object",
+        "properties": {
+          "GitVersion": {
+            "type": "string"
+          },
+          "GitCommit": {
+            "type": "string"
+          },
+          "BuildDate": {
+            "type": "string"
+          },
+          "GoVersion": {
+            "type": "string"
+          },
+          "Compiler": {
+            "type": "string"
+          },
+          "Platform": {
+            "type": "string"
+          },
+          "GitBranch": {
+            "type": "string"
+          }
+        }
+      },
+      "GetClientsStatusRequest": {
+        "type": "object",
+        "properties": {
+          "client_type": {
+            "type": "integer"
+          },
+          "client_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetClientResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "client": {
+            "$ref": "#/components/schemas/Client"
+          }
+        }
+      },
+      "Client": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "secret": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "stopped": {
+            "type": "boolean"
+          },
+          "client_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "origin_client_id": {
+            "type": "string"
+          },
+          "frps_url": {
+            "type": "string"
+          },
+          "ephemeral": {
+            "type": "boolean"
+          },
+          "last_seen_at": {
+            "type": "integer"
+          }
+        }
+      },
+      "GetClientRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "InitClientResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "InitClientRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "ephemeral": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DeleteClientResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteClientRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "ListClientsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "clients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Client"
+            }
+          }
+        }
+      },
+      "ListClientsRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          }
+        }
+      },
+      "InstallWorkerdResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "InstallWorkerdRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "download_url": {
+            "type": "string"
+          }
+        }
+      },
+      "UpgradeFrppResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "UpgradeFrppRequest": {
+        "type": "object",
+        "properties": {
+          "client_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "type": "string"
+          },
+          "download_url": {
+            "type": "string"
+          },
+          "github_proxy": {
+            "type": "string"
+          },
+          "use_github_proxy": {
+            "type": "boolean"
+          },
+          "http_proxy": {
+            "type": "string"
+          },
+          "target_path": {
+            "type": "string"
+          },
+          "backup": {
+            "type": "boolean"
+          },
+          "service_name": {
+            "type": "string"
+          },
+          "restart_service": {
+            "type": "boolean"
+          },
+          "workdir": {
+            "type": "string"
+          },
+          "service_args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetServerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "server": {
+            "$ref": "#/components/schemas/Server"
+          }
+        }
+      },
+      "Server": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "secret": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "frps_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetServerRequest": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "InitServerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "InitServerRequest": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+            "type": "string"
+          },
+          "server_ip": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteServerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteServerRequest": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "ListServersResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Server"
+            }
+          }
+        }
+      },
+      "ListServersRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateFRPCResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "UpdateFRPCRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string",
+            "format": "byte"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "frps_url": {
+            "type": "string"
+          }
+        }
+      },
+      "RemoveFRPCResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "RemoveFRPCRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "StopFRPCResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "StopFRPCRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "StartFRPCResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "StartFRPCRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateFRPSResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "UpdateFRPSRequest": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string",
+            "format": "byte"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "server_ip": {
+            "type": "string"
+          },
+          "frps_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "RemoveFRPSResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "RemoveFRPSRequest": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProxyStatsByClientIDResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "proxy_infos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProxyInfo"
+            }
+          }
+        }
+      },
+      "ProxyInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "today_traffic_in": {
+            "type": "integer"
+          },
+          "today_traffic_out": {
+            "type": "integer"
+          },
+          "history_traffic_in": {
+            "type": "integer"
+          },
+          "history_traffic_out": {
+            "type": "integer"
+          },
+          "first_sync": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetProxyStatsByClientIDRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProxyStatsByServerIDResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "proxy_infos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProxyInfo"
+            }
+          }
+        }
+      },
+      "GetProxyStatsByServerIDRequest": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "ListProxyConfigsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "proxy_configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProxyConfig"
+            }
+          }
+        }
+      },
+      "ProxyConfig": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string"
+          },
+          "origin_client_id": {
+            "type": "string"
+          },
+          "stopped": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ListProxyConfigsRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateProxyConfigResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "CreateProxyConfigRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string",
+            "format": "byte"
+          },
+          "overwrite": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UpdateProxyConfigResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "UpdateProxyConfigRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "config": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "DeleteProxyConfigResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteProxyConfigRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProxyConfigResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "proxy_config": {
+            "$ref": "#/components/schemas/ProxyConfig"
+          },
+          "working_status": {
+            "$ref": "#/components/schemas/ProxyWorkingStatus"
+          }
+        }
+      },
+      "ProxyWorkingStatus": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "err": {
+            "type": "string"
+          },
+          "remote_addr": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProxyConfigRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "StartProxyResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "StartProxyRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "StopProxyResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "StopProxyRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWorkerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "worker": {
+            "$ref": "#/components/schemas/Worker"
+          },
+          "clients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Client"
+            }
+          }
+        }
+      },
+      "Worker": {
+        "type": "object",
+        "properties": {
+          "worker_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "tenant_id": {
+            "type": "integer"
+          },
+          "socket": {
+            "$ref": "#/components/schemas/Socket"
+          },
+          "code_entry": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "config_template": {
+            "type": "string"
+          }
+        }
+      },
+      "Socket": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWorkerRequest": {
+        "type": "object",
+        "properties": {
+          "worker_id": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWorkerStatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "worker_status": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetWorkerStatusRequest": {
+        "type": "object",
+        "properties": {
+          "worker_id": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateWorkerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "worker_id": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateWorkerRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "worker": {
+            "$ref": "#/components/schemas/Worker"
+          }
+        }
+      },
+      "ListWorkersResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "workers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Worker"
+            }
+          }
+        }
+      },
+      "ListWorkersRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          }
+        }
+      },
+      "RemoveWorkerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "RemoveWorkerRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "worker_id": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateWorkerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "UpdateWorkerRequest": {
+        "type": "object",
+        "properties": {
+          "client_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "worker": {
+            "$ref": "#/components/schemas/Worker"
+          }
+        }
+      },
+      "RedeployWorkerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "RedeployWorkerRequest": {
+        "type": "object",
+        "properties": {
+          "worker_id": {
+            "type": "string"
+          },
+          "client_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateWorkerIngressResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "CreateWorkerIngressRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string"
+          },
+          "server_id": {
+            "type": "string"
+          },
+          "worker_id": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWorkerIngressResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "proxy_configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProxyConfig"
+            }
+          }
+        }
+      },
+      "GetWorkerIngressRequest": {
+        "type": "object",
+        "properties": {
+          "worker_id": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateNetworkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          }
+        }
+      },
+      "Network": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "tenant_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "cidr": {
+            "type": "string"
+          },
+          "acl": {
+            "$ref": "#/components/schemas/AclConfig"
+          }
+        }
+      },
+      "AclConfig": {
+        "type": "object",
+        "properties": {
+          "acls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclRuleConfig"
+            }
+          }
+        }
+      },
+      "AclRuleConfig": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "src": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dst": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateNetworkRequest": {
+        "type": "object",
+        "properties": {
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          }
+        }
+      },
+      "DeleteNetworkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteNetworkRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "UpdateNetworkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          }
+        }
+      },
+      "UpdateNetworkRequest": {
+        "type": "object",
+        "properties": {
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          }
+        }
+      },
+      "GetNetworkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "network": {
+            "$ref": "#/components/schemas/Network"
+          }
+        }
+      },
+      "GetNetworkRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "ListNetworksResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "networks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Network"
+            }
+          }
+        }
+      },
+      "ListNetworksRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          }
+        }
+      },
+      "GetNetworkTopologyResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "adjs": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/WireGuardLinks"
+            }
+          }
+        }
+      },
+      "WireGuardLinks": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WireGuardLink"
+            }
+          }
+        }
+      },
+      "WireGuardLink": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "from_wireguard_id": {
+            "type": "integer"
+          },
+          "to_wireguard_id": {
+            "type": "integer"
+          },
+          "up_bandwidth_mbps": {
+            "type": "integer"
+          },
+          "down_bandwidth_mbps": {
+            "type": "integer"
+          },
+          "latency_ms": {
+            "type": "integer"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "to_endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          },
+          "routes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Endpoint": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "host": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "wireguard_id": {
+            "type": "integer"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "GetNetworkTopologyRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "spf": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateEndpointResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          }
+        }
+      },
+      "CreateEndpointRequest": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          }
+        }
+      },
+      "DeleteEndpointResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteEndpointRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "UpdateEndpointResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          }
+        }
+      },
+      "UpdateEndpointRequest": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          }
+        }
+      },
+      "GetEndpointResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          }
+        }
+      },
+      "GetEndpointRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "ListEndpointsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Endpoint"
+            }
+          }
+        }
+      },
+      "ListEndpointsRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "wireguard_id": {
+            "type": "integer"
+          }
+        }
+      },
+      "CreateWireGuardLinkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wireguard_link": {
+            "$ref": "#/components/schemas/WireGuardLink"
+          }
+        }
+      },
+      "CreateWireGuardLinkRequest": {
+        "type": "object",
+        "properties": {
+          "wireguard_link": {
+            "$ref": "#/components/schemas/WireGuardLink"
+          }
+        }
+      },
+      "DeleteWireGuardLinkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteWireGuardLinkRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "UpdateWireGuardLinkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wireguard_link": {
+            "$ref": "#/components/schemas/WireGuardLink"
+          }
+        }
+      },
+      "UpdateWireGuardLinkRequest": {
+        "type": "object",
+        "properties": {
+          "wireguard_link": {
+            "$ref": "#/components/schemas/WireGuardLink"
+          }
+        }
+      },
+      "GetWireGuardLinkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wireguard_link": {
+            "$ref": "#/components/schemas/WireGuardLink"
+          }
+        }
+      },
+      "GetWireGuardLinkRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "ListWireGuardLinksResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "wireguard_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WireGuardLink"
+            }
+          }
+        }
+      },
+      "ListWireGuardLinksRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          },
+          "network_id": {
+            "type": "integer"
+          }
+        }
+      },
+      "CreateWireGuardResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wireguard_config": {
+            "$ref": "#/components/schemas/WireGuardConfig"
+          }
+        }
+      },
+      "WireGuardConfig": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "tenant_id": {
+            "type": "integer"
+          },
+          "interface_name": {
+            "type": "string"
+          },
+          "private_key": {
+            "type": "string"
+          },
+          "local_address": {
+            "type": "string"
+          },
+          "listen_port": {
+            "type": "integer"
+          },
+          "interface_mtu": {
+            "type": "integer"
+          },
+          "peers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WireGuardPeerConfig"
+            }
+          },
+          "advertised_endpoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Endpoint"
+            }
+          },
+          "dns_servers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "network_id": {
+            "type": "integer"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ws_listen_port": {
+            "type": "integer"
+          },
+          "use_gvisor_net": {
+            "type": "boolean"
+          },
+          "adjs": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/WireGuardLinks"
+            }
+          }
+        }
+      },
+      "WireGuardPeerConfig": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "tenant_id": {
+            "type": "integer"
+          },
+          "public_key": {
+            "type": "string"
+          },
+          "preshared_key": {
+            "type": "string"
+          },
+          "allowed_ips": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/Endpoint"
+          },
+          "persistent_keepalive": {
+            "type": "integer"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "virtual_ip": {
+            "type": "string"
+          },
+          "listen_port": {
+            "type": "integer"
+          },
+          "ws_listen_port": {
+            "type": "integer"
+          },
+          "use_gvisor_net": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateWireGuardRequest": {
+        "type": "object",
+        "properties": {
+          "wireguard_config": {
+            "$ref": "#/components/schemas/WireGuardConfig"
+          }
+        }
+      },
+      "DeleteWireGuardResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "DeleteWireGuardRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "interface_name": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateWireGuardResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wireguard_config": {
+            "$ref": "#/components/schemas/WireGuardConfig"
+          }
+        }
+      },
+      "UpdateWireGuardRequest": {
+        "type": "object",
+        "properties": {
+          "wireguard_config": {
+            "$ref": "#/components/schemas/WireGuardConfig"
+          },
+          "update_type": {
+            "type": "integer"
+          }
+        }
+      },
+      "RestartWireGuardResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "RestartWireGuardRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "interface_name": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWireGuardResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wireguard_config": {
+            "$ref": "#/components/schemas/WireGuardConfig"
+          }
+        }
+      },
+      "GetWireGuardRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "interface_name": {
+            "type": "string"
+          }
+        }
+      },
+      "ListWireGuardsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "wireguard_configs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WireGuardConfig"
+            }
+          }
+        }
+      },
+      "ListWireGuardsRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "keyword": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "network_id": {
+            "type": "integer"
+          }
+        }
+      },
+      "GetWireGuardRuntimeInfoResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "wg_device_runtime_info": {
+            "$ref": "#/components/schemas/WGDeviceRuntimeInfo"
+          }
+        }
+      },
+      "WGDeviceRuntimeInfo": {
+        "type": "object",
+        "properties": {
+          "private_key": {
+            "type": "string"
+          },
+          "listen_port": {
+            "type": "integer"
+          },
+          "peers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WGPeerRuntimeInfo"
+            }
+          },
+          "protocol_version": {
+            "type": "integer"
+          },
+          "errno": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "ping_map": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "interface_name": {
+            "type": "string"
+          },
+          "virt_addr_ping_map": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "peer_virt_addr_map": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "peer_config_map": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/WireGuardPeerConfig"
+            }
+          },
+          "virtual_ip": {
+            "type": "string"
+          },
+          "extra": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "WGPeerRuntimeInfo": {
+        "type": "object",
+        "properties": {
+          "public_key": {
+            "type": "string"
+          },
+          "preshared_key": {
+            "type": "string"
+          },
+          "allowed_ips": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tx_bytes": {
+            "type": "integer"
+          },
+          "rx_bytes": {
+            "type": "integer"
+          },
+          "persistent_keepalive_interval": {
+            "type": "integer"
+          },
+          "last_handshake_time_nsec": {
+            "type": "integer"
+          },
+          "last_handshake_time_sec": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "extra": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetWireGuardRuntimeInfoRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "interface_name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

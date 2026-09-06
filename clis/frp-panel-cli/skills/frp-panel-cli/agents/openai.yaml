@@ -1,0 +1,4 @@
+interface:
+  display_name: "frp-panel-cli CLI"
+  short_description: "Use the frp-panel-cli generated CLI"
+  default_prompt: "Use $frp-panel-cli to find and run the right frp-panel-cli command."

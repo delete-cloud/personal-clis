@@ -1,0 +1,662 @@
+info:
+    title: frp_panel (extracted)
+    version: 0.0.0
+    x-lathe-scan:
+        confidence: medium
+        extractor: gin
+openapi: 3.0.3
+paths:
+    /auth:
+        post:
+            operationId: postAuth
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /baseinfo:
+        get:
+            operationId: getBaseinfo
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /clientsstatus:
+        post:
+            operationId: postClientsstatus
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /create:
+        post:
+            operationId: postCreate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /create_config:
+        post:
+            operationId: postCreateconfig
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /create_ingress:
+        post:
+            operationId: postCreateingress
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /delete:
+        post:
+            operationId: postDelete
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /delete_config:
+        post:
+            operationId: postDeleteconfig
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /endpoint/create:
+        post:
+            operationId: postEndpointCreate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /endpoint/delete:
+        post:
+            operationId: postEndpointDelete
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /endpoint/get:
+        post:
+            operationId: postEndpointGet
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /endpoint/list:
+        post:
+            operationId: postEndpointList
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /endpoint/update:
+        post:
+            operationId: postEndpointUpdate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /get:
+        post:
+            operationId: postGet
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /get_by_cid:
+        post:
+            operationId: postGetbycid
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /get_by_sid:
+        post:
+            operationId: postGetbysid
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /get_config:
+        post:
+            operationId: postGetconfig
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /get_ingress:
+        post:
+            operationId: postGetingress
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /init:
+        post:
+            operationId: postInit
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /install_workerd:
+        post:
+            operationId: postInstallworkerd
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /link/create:
+        post:
+            operationId: postLinkCreate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /link/delete:
+        post:
+            operationId: postLinkDelete
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /link/get:
+        post:
+            operationId: postLinkGet
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /link/list:
+        post:
+            operationId: postLinkList
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /link/update:
+        post:
+            operationId: postLinkUpdate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /list:
+        post:
+            operationId: postList
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /list_configs:
+        post:
+            operationId: postListconfigs
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /log:
+        get:
+            operationId: getLog
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /network/create:
+        post:
+            operationId: postNetworkCreate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /network/delete:
+        post:
+            operationId: postNetworkDelete
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /network/get:
+        post:
+            operationId: postNetworkGet
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /network/list:
+        post:
+            operationId: postNetworkList
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /network/topology:
+        post:
+            operationId: postNetworkTopology
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /network/update:
+        post:
+            operationId: postNetworkUpdate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /pty/{clientID}:
+        get:
+            operationId: getPtyClientID
+            parameters:
+                - in: path
+                  name: clientID
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /redeploy:
+        post:
+            operationId: postRedeploy
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /remove:
+        post:
+            operationId: postRemove
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /restart:
+        post:
+            operationId: postRestart
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /runtime/get:
+        post:
+            operationId: postRuntimeGet
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /sign-token:
+        post:
+            operationId: postSigntoken
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /start:
+        post:
+            operationId: postStart
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /start_proxy:
+        post:
+            operationId: postStartproxy
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /status:
+        post:
+            operationId: postStatus
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /stop:
+        post:
+            operationId: postStop
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /stop_proxy:
+        post:
+            operationId: postStopproxy
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /update:
+        post:
+            operationId: postUpdate
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /update_config:
+        post:
+            operationId: postUpdateconfig
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /upgrade:
+        post:
+            operationId: postUpgrade
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /v1/auth/cert:
+        post:
+            operationId: postV1AuthCert
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /v1/auth/login:
+        post:
+            operationId: postV1AuthLogin
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /v1/auth/logout:
+        get:
+            operationId: getV1AuthLogout
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /v1/auth/register:
+        post:
+            operationId: postV1AuthRegister
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: biz/master/handler.go
+    /ws:
+        get:
+            operationId: getWs
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: utils/wsgrpc/wsgrpc.go
+    /wsgrpc:
+        get:
+            operationId: getWsgrpc
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: cmd/frpp/shared/master.go

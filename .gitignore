@@ -1,0 +1,16 @@
+# Generated local artifacts and upstream checkouts
+**/bin/
+**/.cache/
+**/upstream/
+**/scan-recheck/
+**/__pycache__/
+*.pyc
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+hosts.yml
+hosts.yaml
+*.pem
+*.key
+.DS_Store

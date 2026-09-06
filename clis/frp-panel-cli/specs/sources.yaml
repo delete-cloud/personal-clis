@@ -1,0 +1,6 @@
+sources:
+  panel:
+    local_path: .
+    backend: openapi3
+    openapi3:
+      files: [openapi.json]

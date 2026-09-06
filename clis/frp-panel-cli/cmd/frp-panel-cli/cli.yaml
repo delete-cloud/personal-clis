@@ -1,0 +1,10 @@
+cli:
+  name: frp-panel-cli
+  short: Manage frp-panel through its HTTP API
+  command_path: namespaced
+  host_env: FRP_PANEL_HOST
+  config_dir_env: FRP_PANEL_CLI_CONFIG_DIR
+auth:
+  default_type: bearer
+skill:
+  root: skills
