@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-gateway-cli CLI"
+  short_description: "Use the ai-gateway-cli generated CLI"
+  default_prompt: "Use $ai-gateway-cli to find and run the right ai-gateway-cli command."

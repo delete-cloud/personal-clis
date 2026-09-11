@@ -1,0 +1,3710 @@
+info:
+    title: ai_gateway (extracted)
+    version: 0.0.0
+    x-lathe-scan:
+        confidence: medium
+        extractor: gin
+openapi: 3.0.3
+paths:
+    /accepted:
+        get:
+            operationId: getAccepted
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/response_test.go
+    /agent-routes:
+        get:
+            operationId: getAgentroutes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postAgentroutes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agent-routes/{id}:
+        delete:
+            operationId: deleteAgentroutesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getAgentroutesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putAgentroutesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agent-routes/overview:
+        get:
+            operationId: getAgentroutesOverview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents:
+        get:
+            operationId: getAgents
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postAgents
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/{id}:
+        delete:
+            operationId: deleteAgentsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getAgentsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putAgentsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/{id}/connections/diagnostics:
+        get:
+            operationId: getAgentsIdConnectionsDiagnostics
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/agent/connectivity_test.go
+    /agents/{id}/connections/targets:
+        get:
+            operationId: getAgentsIdConnectionsTargets
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/{id}/connectivity:
+        get:
+            operationId: getAgentsIdConnectivity
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/agent/connectivity_test.go
+        post:
+            operationId: postAgentsIdConnectivity
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/agent/connectivity_test.go
+    /agents/{id}/detail:
+        get:
+            operationId: getAgentsIdDetail
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/{id}/operations/{operation}:
+        post:
+            operationId: postAgentsIdOperationsOperation
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: operation
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/enrollment-token:
+        post:
+            operationId: postAgentsEnrollmenttoken
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/full-sync:
+        post:
+            operationId: postAgentsFullsync
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/goroutines:
+        get:
+            operationId: getAgentsGoroutines
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/inflight:
+        get:
+            operationId: getAgentsInflight
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/inflight/all:
+        get:
+            operationId: getAgentsInflightAll
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/inflight/interrupt:
+        post:
+            operationId: postAgentsInflightInterrupt
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /agents/online:
+        get:
+            operationId: getAgentsOnline
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-access-grants:
+        get:
+            operationId: getApiaccessgrants
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-access-grants/{principal_type}/{principal_id}/services/{service_id}:
+        delete:
+            operationId: deleteApiaccessgrantsPrincipaltypePrincipalidServicesServiceid
+            parameters:
+                - in: path
+                  name: principal_type
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: principal_id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: service_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApiaccessgrantsPrincipaltypePrincipalidServicesServiceid
+            parameters:
+                - in: path
+                  name: principal_type
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: principal_id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: service_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-access-grants/effective:
+        get:
+            operationId: getApiaccessgrantsEffective
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-backends:
+        get:
+            operationId: getApibackends
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postApibackends
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-backends/{id}:
+        delete:
+            operationId: deleteApibackendsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getApibackendsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApibackendsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-catalog/effective:
+        get:
+            operationId: getApicatalogEffective
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-catalog/openapi:
+        get:
+            operationId: getApicatalogOpenapi
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_catalog/openapi_test.go
+    /api-catalog/routes:
+        get:
+            operationId: getApicatalogRoutes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-catalog/services:
+        get:
+            operationId: getApicatalogServices
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-catalog/services/detail:
+        get:
+            operationId: getApicatalogServicesDetail
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-request-logs:
+        get:
+            operationId: getApirequestlogs
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-request-logs/{request_id}:
+        get:
+            operationId: getApirequestlogsRequestid
+            parameters:
+                - in: path
+                  name: request_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-request-logs/{request_id}/trace:
+        get:
+            operationId: getApirequestlogsRequestidTrace
+            parameters:
+                - in: path
+                  name: request_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-request-traces:
+        get:
+            operationId: getApirequesttraces
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-role-bindings:
+        get:
+            operationId: getApirolebindings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postApirolebindings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-role-bindings/{id}:
+        delete:
+            operationId: deleteApirolebindingsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApirolebindingsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-roles:
+        get:
+            operationId: getApiroles
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postApiroles
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-roles/{id}:
+        delete:
+            operationId: deleteApirolesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getApirolesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApirolesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-routes:
+        get:
+            operationId: getApiroutes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postApiroutes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-routes/{id}:
+        delete:
+            operationId: deleteApiroutesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getApiroutesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApiroutesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-routes/preview:
+        post:
+            operationId: postApiroutesPreview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-services:
+        get:
+            operationId: getApiservices
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postApiservices
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-services/{id}:
+        delete:
+            operationId: deleteApiservicesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getApiservicesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApiservicesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-services/{id}/openapi:
+        get:
+            operationId: getApiservicesIdOpenapi
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApiservicesIdOpenapi
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-services/openapi/import:
+        post:
+            operationId: postApiservicesOpenapiImport
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-services/openapi/preview:
+        post:
+            operationId: postApiservicesOpenapiPreview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-upstreams:
+        get:
+            operationId: getApiupstreams
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postApiupstreams
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api-upstreams/{id}:
+        delete:
+            operationId: deleteApiupstreamsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getApiupstreamsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putApiupstreamsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/admin/channels/batch-edit:
+        post:
+            operationId: postApiAdminChannelsBatchedit
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/channel/batch_edit_test.go
+    /api/agents/enroll:
+        post:
+            operationId: postApiAgentsEnroll
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/agents/usage:
+        post:
+            operationId: postApiAgentsUsage
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/login:
+        post:
+            operationId: postApiLogin
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/oauth/{provider}/authorize:
+        get:
+            operationId: getApiOauthProviderAuthorize
+            parameters:
+                - in: path
+                  name: provider
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/oauth/{provider}/callback:
+        get:
+            operationId: getApiOauthProviderCallback
+            parameters:
+                - in: path
+                  name: provider
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/oauth/{provider}/link:
+        get:
+            operationId: getApiOauthProviderLink
+            parameters:
+                - in: path
+                  name: provider
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/oauth/bind:
+        post:
+            operationId: postApiOauthBind
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/oauth/providers:
+        get:
+            operationId: getApiOauthProviders
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/oauth/register:
+        post:
+            operationId: postApiOauthRegister
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/register:
+        post:
+            operationId: postApiRegister
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /api/system/public-config:
+        get:
+            operationId: getApiSystemPublicconfig
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /audio/speech:
+        post:
+            operationId: postAudioSpeech
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /audio/transcriptions:
+        post:
+            operationId: postAudioTranscriptions
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /audio/translations:
+        post:
+            operationId: postAudioTranslations
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /billing/channels:
+        get:
+            operationId: getBillingChannels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/channels/{channel_id}/daily:
+        get:
+            operationId: getBillingChannelsChannelidDaily
+            parameters:
+                - in: path
+                  name: channel_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/insights:
+        get:
+            operationId: getBillingInsights
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/billing/insights_http_test.go
+    /billing/overview:
+        get:
+            operationId: getBillingOverview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/rebuild:
+        post:
+            operationId: postBillingRebuild
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/rebuild/jobs:
+        get:
+            operationId: getBillingRebuildJobs
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/rebuild/jobs/{id}:
+        get:
+            operationId: getBillingRebuildJobsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/tokens:
+        get:
+            operationId: getBillingTokens
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /billing/tokens/{token_id}/daily:
+        get:
+            operationId: getBillingTokensTokenidDaily
+            parameters:
+                - in: path
+                  name: token_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /byok-system-baseurls:
+        get:
+            operationId: getByoksystembaseurls
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /cache/stats:
+        get:
+            operationId: getCacheStats
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /capabilities:
+        get:
+            operationId: getCapabilities
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels:
+        get:
+            operationId: getChannels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postChannels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/{id}:
+        delete:
+            operationId: deleteChannelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getChannelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putChannelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/{id}/dataflow:
+        get:
+            operationId: getChannelsIdDataflow
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/{id}/test:
+        post:
+            operationId: postChannelsIdTest
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/batch-edit:
+        post:
+            operationId: postChannelsBatchedit
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/export:
+        post:
+            operationId: postChannelsExport
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/fetch-models:
+        post:
+            operationId: postChannelsFetchmodels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/import:
+        post:
+            operationId: postChannelsImport
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /channels/types:
+        get:
+            operationId: getChannelsTypes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /chat/completions:
+        post:
+            operationId: postChatCompletions
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /completions:
+        post:
+            operationId: postCompletions
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /created:
+        get:
+            operationId: getCreated
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/response_test.go
+    /embeddings:
+        post:
+            operationId: postEmbeddings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /first-usage:
+        get:
+            operationId: getFirstusage
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server_lifecycle_test.go
+    /grants:
+        get:
+            operationId: getGrants
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_access_grant/list_test.go
+    /grants/{principal_type}/{principal_id}/services/{service_id}:
+        delete:
+            operationId: deleteGrantsPrincipaltypePrincipalidServicesServiceid
+            parameters:
+                - in: path
+                  name: principal_type
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: principal_id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: service_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_access_grant/write_test.go
+        put:
+            operationId: putGrantsPrincipaltypePrincipalidServicesServiceid
+            parameters:
+                - in: path
+                  name: principal_type
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: principal_id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: service_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_access_grant/quality_gate_test.go
+    /grants/effective:
+        get:
+            operationId: getGrantsEffective
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_access_grant/list_test.go
+    /images/generations:
+        post:
+            operationId: postImagesGenerations
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /insights:
+        get:
+            operationId: getInsights
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /invite-codes:
+        get:
+            operationId: getInvitecodes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postInvitecodes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /invite-codes/{id}:
+        delete:
+            operationId: deleteInvitecodesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /items/{id}:
+        put:
+            operationId: putItemsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/adapter_test.go
+    /jobs:
+        post:
+            operationId: postJobs
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/response_test.go
+    /limited:
+        post:
+            operationId: postLimited
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_openapi/handler_test.go
+    /limiter-bindings:
+        get:
+            operationId: getLimiterbindings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postLimiterbindings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /limiter-bindings/{id}:
+        delete:
+            operationId: deleteLimiterbindingsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /logs:
+        get:
+            operationId: getLogs
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /logs/{request_id}/trace:
+        get:
+            operationId: getLogsRequestidTrace
+            parameters:
+                - in: path
+                  name: request_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /logs/insights:
+        get:
+            operationId: getLogsInsights
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /me:
+        get:
+            operationId: getMe
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/middleware/auth_test.go
+    /messages:
+        post:
+            operationId: postMessages
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /metrics:
+        get:
+            operationId: getMetrics
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /model-marketplace:
+        get:
+            operationId: getModelmarketplace
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /model-marketplace/detail:
+        get:
+            operationId: getModelmarketplaceDetail
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /model-routings:
+        get:
+            operationId: getModelroutings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postModelroutings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /model-routings/{id}:
+        delete:
+            operationId: deleteModelroutingsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getModelroutingsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putModelroutingsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /model-routings/candidates:
+        get:
+            operationId: getModelroutingsCandidates
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /model-routings/global-routing-names:
+        get:
+            operationId: getModelroutingsGlobalroutingnames
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /model-routings/preview:
+        post:
+            operationId: postModelroutingsPreview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /models:
+        get:
+            operationId: getModels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+        post:
+            operationId: postModels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /models/{id}:
+        delete:
+            operationId: deleteModelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getModelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putModelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /models/apply-pricing:
+        post:
+            operationId: postModelsApplypricing
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /models/fetch-pricing:
+        post:
+            operationId: postModelsFetchpricing
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /models/sync:
+        post:
+            operationId: postModelsSync
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /monitoring/insights:
+        get:
+            operationId: getMonitoringInsights
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /oauth-providers:
+        get:
+            operationId: getOauthproviders
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postOauthproviders
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /oauth-providers/{id}:
+        delete:
+            operationId: deleteOauthprovidersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getOauthprovidersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putOauthprovidersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /oauth/identities:
+        get:
+            operationId: getOauthIdentities
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /oauth/identities/{id}:
+        delete:
+            operationId: deleteOauthIdentitiesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /oauth/link-ticket:
+        post:
+            operationId: postOauthLinkticket
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /observability/breaker-board:
+        get:
+            operationId: getObservabilityBreakerboard
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /observability/delivery-board:
+        get:
+            operationId: getObservabilityDeliveryboard
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /observability/delivery-op:
+        post:
+            operationId: postObservabilityDeliveryop
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /observability/limiter-usage:
+        get:
+            operationId: getObservabilityLimiterusage
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /observability/recent-health:
+        get:
+            operationId: getObservabilityRecenthealth
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /optional:
+        post:
+            operationId: postOptional
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/adapter_test.go
+    /panic:
+        get:
+            operationId: getPanic
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/pkg/ginutil/abort_handler_test.go
+    /ping:
+        get:
+            operationId: getPing
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /preview:
+        post:
+            operationId: postPreview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/api_openapi/handler_test.go
+    /private-channels:
+        get:
+            operationId: getPrivatechannels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postPrivatechannels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/{id}:
+        delete:
+            operationId: deletePrivatechannelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getPrivatechannelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putPrivatechannelsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/{id}/disable:
+        post:
+            operationId: postPrivatechannelsIdDisable
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/{id}/key:
+        put:
+            operationId: putPrivatechannelsIdKey
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/{id}/test:
+        post:
+            operationId: postPrivatechannelsIdTest
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/available-models:
+        get:
+            operationId: getPrivatechannelsAvailablemodels
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/baseurl/usage:
+        get:
+            operationId: getPrivatechannelsBaseurlUsage
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/billing/by-channel:
+        get:
+            operationId: getPrivatechannelsBillingBychannel
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/billing/by-model:
+        get:
+            operationId: getPrivatechannelsBillingBymodel
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/billing/overview:
+        get:
+            operationId: getPrivatechannelsBillingOverview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/export:
+        post:
+            operationId: postPrivatechannelsExport
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/import:
+        post:
+            operationId: postPrivatechannelsImport
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /private-channels/types:
+        get:
+            operationId: getPrivatechannelsTypes
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /probe:
+        post:
+            operationId: postProbe
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/auth/middleware_test.go
+    /profile:
+        get:
+            operationId: getProfile
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putProfile
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /profile/password:
+        put:
+            operationId: putProfilePassword
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /rate-limiters:
+        get:
+            operationId: getRatelimiters
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postRatelimiters
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /rate-limiters/{id}:
+        delete:
+            operationId: deleteRatelimitersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putRatelimitersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /response:
+        get:
+            operationId: getResponse
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/response_test.go
+    /responses:
+        post:
+            operationId: postResponses
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /responses/{id}:
+        post:
+            operationId: postResponsesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/server.go
+    /scripts:
+        get:
+            operationId: getScripts
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postScripts
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /scripts/{id}:
+        delete:
+            operationId: deleteScriptsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getScriptsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putScriptsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats:
+        get:
+            operationId: getStats
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/byok-overview:
+        get:
+            operationId: getStatsByokoverview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/channel-model-breakdown:
+        get:
+            operationId: getStatsChannelmodelbreakdown
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/dashboard:
+        get:
+            operationId: getStatsDashboard
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/market-share:
+        get:
+            operationId: getStatsMarketshare
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/metric-trend:
+        get:
+            operationId: getStatsMetrictrend
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/model-distribution:
+        get:
+            operationId: getStatsModeldistribution
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/stats/model_distribution_http_test.go
+    /stats/overview:
+        get:
+            operationId: getStatsOverview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /stats/trend:
+        get:
+            operationId: getStatsTrend
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/cleanup/batch:
+        post:
+            operationId: postSystemCleanupBatch
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/cleanup/preview:
+        get:
+            operationId: getSystemCleanupPreview
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/history-backfill/complete:
+        post:
+            operationId: postSystemHistorybackfillComplete
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/history-backfill/legacy-artifact:
+        delete:
+            operationId: deleteSystemHistorybackfillLegacyartifact
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/history-backfill/retry:
+        post:
+            operationId: postSystemHistorybackfillRetry
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/history-backfill/skip:
+        post:
+            operationId: postSystemHistorybackfillSkip
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/history-backfill/source:
+        delete:
+            operationId: deleteSystemHistorybackfillSource
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/log-queue/backlog:
+        delete:
+            operationId: deleteSystemLogqueueBacklog
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/log-queue/retry:
+        post:
+            operationId: postSystemLogqueueRetry
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/settings:
+        get:
+            operationId: getSystemSettings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putSystemSettings
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /system/stats:
+        get:
+            operationId: getSystemStats
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /test:
+        get:
+            operationId: getTest
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/auth/middleware_test.go
+        post:
+            operationId: postTest
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/auth/middleware_test.go
+    /token-templates:
+        get:
+            operationId: getTokentemplates
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postTokentemplates
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /token-templates/{id}:
+        delete:
+            operationId: deleteTokentemplatesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putTokentemplatesId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /token-templates/{id}/sync:
+        post:
+            operationId: postTokentemplatesIdSync
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /token-templates/{id}/sync-preview:
+        post:
+            operationId: postTokentemplatesIdSyncpreview
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /tokens:
+        get:
+            operationId: getTokens
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/token/list_test.go
+        post:
+            operationId: postTokens
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /tokens/{id}:
+        delete:
+            operationId: deleteTokensId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getTokensId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/api/token/list_test.go
+        put:
+            operationId: putTokensId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /tokens/{id}/model-routings:
+        get:
+            operationId: getTokensIdModelroutings
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postTokensIdModelroutings
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /tokens/{id}/model-routings/{routing_id}:
+        delete:
+            operationId: deleteTokensIdModelroutingsRoutingid
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: routing_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getTokensIdModelroutingsRoutingid
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: routing_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putTokensIdModelroutingsRoutingid
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+                - in: path
+                  name: routing_id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /tokens/{id}/model-routings/preview:
+        post:
+            operationId: postTokensIdModelroutingsPreview
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /user-groups:
+        get:
+            operationId: getUsergroups
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postUsergroups
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /user-groups/{id}:
+        delete:
+            operationId: deleteUsergroupsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getUsergroupsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putUsergroupsId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /users:
+        get:
+            operationId: getUsers
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        post:
+            operationId: postUsers
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /users/{id}:
+        delete:
+            operationId: deleteUsersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        get:
+            operationId: getUsersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+        put:
+            operationId: putUsersId
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /users/{id}/quota:
+        put:
+            operationId: putUsersIdQuota
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /v1/chat/completions:
+        post:
+            operationId: postV1ChatCompletions
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/relay/context_test.go
+    /v1/models:
+        get:
+            operationId: getV1Models
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/relay/models_test.go
+    /v1/responses:
+        post:
+            operationId: postV1Responses
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/relay/handler_test.go
+    /ws/agent:
+        get:
+            operationId: getWsAgent
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/server.go
+    /ws/agent-relay:
+        get:
+            operationId: getWsAgentrelay
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/master/agent_direct_tunnel_integration_test.go
+    /x:
+        get:
+            operationId: getX
+            responses:
+                "200":
+                    description: extracted by lathe-scan; response shape unknown
+            x-lathe-confidence: medium
+            x-lathe-gaps:
+                - body
+                - response
+                - auth
+            x-lathe-source-file: internal/agent/auth/middleware_test.go

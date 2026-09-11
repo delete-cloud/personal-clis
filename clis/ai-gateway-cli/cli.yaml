@@ -1,0 +1,10 @@
+cli:
+  name: ai-gateway-cli
+  short: Manage AI Gateway through its master HTTP API
+  command_path: namespaced
+  host_env: AI_GATEWAY_HOST
+  config_dir_env: AI_GATEWAY_CLI_CONFIG_DIR
+auth:
+  default_type: bearer
+skill:
+  root: skills

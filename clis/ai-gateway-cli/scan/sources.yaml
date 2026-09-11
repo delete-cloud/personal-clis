@@ -1,0 +1,7 @@
+sources:
+    ai_gateway:
+        local_path: ai_gateway
+        backend: openapi3
+        openapi3:
+            files:
+                - openapi.yaml

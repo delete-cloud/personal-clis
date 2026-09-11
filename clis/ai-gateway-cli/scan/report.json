@@ -1,0 +1,94 @@
+{
+  "schema_version": 3,
+  "tool_version": "0.1.0",
+  "summary": {
+    "inputs": 1,
+    "sources": 1,
+    "usable": 1,
+    "postman_candidates": 0,
+    "exit_code": 0
+  },
+  "inputs": [
+    {
+      "input": "upstream/ai-gateway",
+      "kind": "git",
+      "origin": {
+        "type": "repo_url",
+        "repo_url": "https://github.com/VaalaCat/ai-gateway.git",
+        "pinned_tag": "v0.0.20",
+        "ref_kind": "tag"
+      },
+      "candidates": [
+        {
+          "path": "upstream/ai-gateway",
+          "format": "openapi3",
+          "parsed": true,
+          "score": 0,
+          "metrics": {
+            "paths": 196,
+            "operations": 262
+          },
+          "reason": "L2 gin extractor, 262 routes"
+        }
+      ],
+      "selected": [
+        "ai_gateway"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "ai_gateway",
+      "recommended": true,
+      "level": "L2",
+      "extractor": "gin",
+      "backend": "openapi3",
+      "confidence": "medium",
+      "would_emit_commands": 262,
+      "origin": {
+        "type": "local_path",
+        "local_path": "ai_gateway"
+      },
+      "input": "upstream/ai-gateway",
+      "provenance": {
+        "input": "upstream/ai-gateway",
+        "backend": "openapi3",
+        "key": "l2"
+      },
+      "files": [
+        "openapi.yaml"
+      ],
+      "metrics": {
+        "paths": 196,
+        "operations": 262
+      },
+      "gaps": [
+        {
+          "kind": "body",
+          "scope": "source",
+          "message": "request bodies were not recovered from source",
+          "blocking": false
+        },
+        {
+          "kind": "response",
+          "scope": "source",
+          "message": "response shapes were not recovered from source",
+          "blocking": false
+        },
+        {
+          "kind": "auth",
+          "scope": "source",
+          "message": "auth requirements were not recovered from source",
+          "blocking": false
+        },
+        {
+          "kind": "dynamic-route",
+          "scope": "source",
+          "message": "prefixes from route groups or class-level mappings may not be applied; verify full paths",
+          "blocking": false
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}

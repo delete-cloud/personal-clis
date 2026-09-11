@@ -6,10 +6,9 @@
 | CLI | 上游 | 能力 |
 | --- | --- | --- |
 | [frp-panel-cli](clis/frp-panel-cli/) | [VaalaCat/frp-panel](https://github.com/VaalaCat/frp-panel) | 65 个 HTTP API 命令：client、server、proxy、worker、WireGuard 等 |
+| [ai-gateway-cli](clis/ai-gateway-cli/) | [VaalaCat/ai-gateway](https://github.com/VaalaCat/ai-gateway) | 252 个 master HTTP 管理命令：channel、token、agent、user、billing 等 |
 
 ## 快速开始
-
-构建要求：Go >= 1.25.13。运行测试还需 Python 3 和 make；重新生成需 lathe 0.6.1。
 
 ```sh
 cd clis/frp-panel-cli
@@ -34,17 +33,23 @@ install -m 755 bin/frp-panel-cli "$HOME/.local/bin/frp-panel-cli"
 
 1. 固定上游源码 commit，以便追溯和重复审核。
 2. 用 [lathe-scan](https://github.com/lathe-cli/lathe-scan) 静态发现 API，保留扫描报告和缺口。
-3. 对照源码补齐并审核 OpenAPI：路径前缀、JSON 请求体、响应包裹、鉴权和协议边界。
+3. 对照源码补齐并审核 OpenAPI：路径前缀、JSON 请求体、响应形状、鉴权和协议边界。
 4. 用 [lathe](https://github.com/lathe-cli/lathe) `bootstrap` 从合约生成 Cobra 命令、机器可读目录和 Agent Skill。
 5. 编译 Go 二进制，检查 catalog、无网络 dry-run 和本地 mock 请求。
+6. 用 [kitup](https://github.com/lathe-cli/kitup) 把生成的 Agent Skill 安装到本机 agent 目录：`make skill-install-dry`，确认后再 `make skill-install`。
 
 frp-panel 的扫描草稿有 54 个不完整候选；路由前缀缺失还造成同名路径合并。
 审核脚本从 Gin 路由及 protobuf Go 类型重建出 65 个 HTTP 接口，排除了插件回调、
 cookie logout、PTY/log WebSocket 和内部 gRPC 协议。详见
 [合约审核说明](clis/frp-panel-cli/specs/REVIEW.md)。
 
+ai-gateway 的扫描草稿有 262 个 gin 候选，同样缺前缀、请求体和鉴权。
+审核脚本从 master `setupRoutes` 重建出 252 个管理接口，排除 WebSocket、Prometheus、
+agent usage ingest 和浏览器 OAuth 跳转。详见
+[ai-gateway 合约审核说明](clis/ai-gateway-cli/specs/REVIEW.md)。
+
 frp-panel 可能用 HTTP 200 返回业务错误。CLI 保留响应包裹；自动化脚本必须检查
-响应 `code == 200`，不能只依赖进程退出码。
+响应 `code == 200`，不能只依赖进程退出码。AI Gateway 成功响应是 handler JSON 本体。
 
 ## 添加项目
 
@@ -57,5 +62,7 @@ frp-panel 可能用 HTTP 200 返回业务错误。CLI 保留响应包裹；自�
 各项目按其目录中的许可证和来源说明分开管理，不假设所有上游代码具有相同许可。
 frp-panel 派生部分保留上游 AGPL-3.0 许可证，见
 [LICENSE.frp-panel](clis/frp-panel-cli/LICENSE.frp-panel)。
+AI Gateway 派生部分保留上游 MIT 许可证，见
+[LICENSE.ai-gateway](clis/ai-gateway-cli/LICENSE.ai-gateway)。
 Lathe 自身为 Apache-2.0，并对生成输出有许可例外；其依赖的许可仍各自适用。
-本仓库新增的集合文档及 frp-panel 集成脚本采用 AGPL-3.0，许可证原文见 [LICENSE](LICENSE)。
+本仓库新增的集合文档及集成脚本采用 AGPL-3.0，许可证原文见 [LICENSE](LICENSE)。
