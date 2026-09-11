@@ -15,14 +15,20 @@ ai-gateway-cli master auth login --hostname http://127.0.0.1:8140 \
   --file /path/outside/repo/login.json --dry-run
 ```
 
-`--dry-run` 只打印请求，不联网。未配置默认服务器；实际调用需要通过 `--hostname` 或 `AI_GATEWAY_HOST` 指定自己的 master 地址。
+普通命令的 `--dry-run` 只打印解析后的请求，不联网。例外是两个 import 命令
+（`master admin channels-import`、`master private_channels private-channels-import`）：它们的 API query 参数
+`dry_run` 占用了 `--dry-run` 这个名字，Lathe 的预览开关被挤到 `--lathe-dry-run`，所以
+`channels-import --dry-run` 会真的发 HTTP（POST 到 import 路径，query `dry_run=true`），不打印预览。
+这两条 import 的 body 都是必填 JSON，发请求（包括 `--dry-run`）必须带 `--file`；
+只想看解析后的请求、不联网，用 `--file … --lathe-dry-run`。
+未配置默认服务器；实际调用需要通过 `--hostname` 或 `AI_GATEWAY_HOST` 指定自己的 master 地址。
 
 配置已有 JWT（用户手动执行；token 文件须放在仓库外）：
 
 ```sh
 export AI_GATEWAY_HOST='https://your-gateway.example'
 ai-gateway-cli auth login --hostname "$AI_GATEWAY_HOST" --with-token --skip-validate < /path/outside/repo/token.txt
-ai-gateway-cli master admin channels list --set page=1 --set page_size=20 -o json
+ai-gateway-cli master admin channels-list --page 1 --page-size 20 -o json
 ```
 
 `auth login` 保存已有 token，不是账号密码登录；`--skip-validate` 只保存，不证明凭据有效。
@@ -60,7 +66,10 @@ make generate build test
 ```
 
 审核脚本要求上游 checkout 干净且 commit 为 `7ab85dadbc4e5652181ef7c8036521dca33236de`（v0.0.20）；升级版本需重新核对。
-252 个接口的 catalog、dry-run、实际 loopback HTTP 方法/路径/请求体及鉴权均测试；这不代表已对真实网关做端到端验收。
+252 个接口的 catalog、实际 loopback HTTP 方法/路径/请求体及鉴权均测试；其中 250 条普通命令用 `--dry-run` 验证了
+network-free 预览（断言没有发出 HTTP），2 条 import 命令用 `--lathe-dry-run` 验证预览、用 `--dry-run` 按 API 语义发到
+loopback（断言 POST 方法、路径和 query `dry_run=true`）。HTTP 次数是 252 次正式请求 + 2 次 import `--dry-run`，共 254 次。
+这不代表已对真实网关做端到端验收。
 
 初始验证使用的工具版本：gh 2.100.0、lathe 0.6.1、lathe-scan 0.1.0、Go 1.27.1。
 官方来源：https://github.com/lathe-cli/lathe 、https://github.com/lathe-cli/lathe-scan 、https://github.com/lathe-cli/kitup 。

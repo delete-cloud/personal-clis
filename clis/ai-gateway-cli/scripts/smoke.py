@@ -2,6 +2,7 @@
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import json, os, re, subprocess, tempfile, threading
+from urllib.parse import parse_qs, urlsplit
 
 root = Path(__file__).resolve().parents[1]
 binary = root / "bin/ai-gateway-cli"
@@ -124,24 +125,54 @@ try:
             return flags, path
 
         actual = set()
+        previews = 0
+        lathe_previews = 0
+        import_dry_runs = 0
+        official_http = 0
         for item in catalog:
             flag_args, filled = extra_flags(item)
             needs_body = bool(item.get("body"))
             body = ["--file", str(empty)] if needs_body else []
             args = [*item["path"], *flag_args]
-            collides = any((flag.get("flag") == "dry-run") for flag in item.get("flags") or [])
+            # Import commands expose an API query parameter named dry_run under the
+            # --dry-run flag, so lathe's preview flag is renamed to --lathe-dry-run.
+            shadowed_dry_run = any((flag.get("flag") == "dry-run") for flag in item.get("flags") or [])
+            preview_flag = (item.get("dry_run") or {}).get("flag") or "dry-run"
             before = len(calls)
-            if not collides:
+            if not shadowed_dry_run:
                 preview = run(*args, *body, "--dry-run")
                 assert len(calls) == before, (item["path"], calls[before:])
                 preview_path = preview["url"].split("?", 1)[0]
                 assert preview_path == env["AI_GATEWAY_HOST"] + filled, (preview["url"], filled)
+                previews += 1
+            else:
+                assert preview_flag == "lathe-dry-run", (item["path"], preview_flag)
+                lathe = run(*args, *body, f"--{preview_flag}")
+                assert len(calls) == before, (item["path"], calls[before:])
+                lathe_path = lathe["url"].split("?", 1)[0]
+                assert lathe_path == env["AI_GATEWAY_HOST"] + filled, (lathe["url"], filled)
+                lathe_previews += 1
+                dry = run(*args, *body, "--dry-run", "-o", "json")
+                assert len(calls) == before + 1, (item["path"], calls[before:])
+                method, path, auth, payload = calls[-1]
+                assert method == item["http"]["method"]
+                assert path.split("?", 1)[0] == filled
+                assert parse_qs(urlsplit(path).query).get("dry_run") == ["true"], (item["path"], path)
+                assert dry == response
+                if item["auth"]["required"]:
+                    assert auth == "Bearer synthetic-test-token"
+                if needs_body:
+                    assert payload == {}
+                import_dry_runs += 1
             got = run(*args, *body, "-o", "json")
             assert got == response
+            official_http += 1
             method, path, auth, payload = calls[-1]
             actual.add((method, path.split("?", 1)[0]))
             assert method == item["http"]["method"]
             assert path.split("?", 1)[0] == filled
+            if shadowed_dry_run:
+                assert "dry_run" not in parse_qs(urlsplit(path).query), (item["path"], path)
             if item["auth"]["required"]:
                 assert auth == "Bearer synthetic-test-token"
             if needs_body:
@@ -149,8 +180,17 @@ try:
             else:
                 assert payload is None
         assert len(actual) == 252
+        assert official_http == 252, official_http
+        assert import_dry_runs == 2, import_dry_runs
+        assert previews == len(catalog) - import_dry_runs
+        assert lathe_previews == import_dry_runs
+        assert len(calls) == official_http + import_dry_runs
         print(
-            "PASS: 252 catalog contracts, 252 network-free previews, 252 loopback HTTP requests, Bearer auth, and JSON body handling"
+            f"PASS: 252 catalog contracts, {previews} network-free --dry-run previews, "
+            f"{lathe_previews} import --lathe-dry-run network-free previews, "
+            f"{import_dry_runs} import --dry-run calls to loopback (real HTTP with query dry_run=true), "
+            f"{official_http} official loopback HTTP requests + {import_dry_runs} import dry-run "
+            f"({official_http + import_dry_runs} total), Bearer auth, and JSON body handling"
         )
 finally:
     server.shutdown()
